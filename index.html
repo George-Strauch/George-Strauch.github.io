@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="George Strauch - Software Engineer" />
+        <meta name="author" content="George Strauch" />
+
+        <title>George E. Strauch V</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome icons -->
+        <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" crossorigin="anonymous"></script>
+
+        <!-- Set theme before CSS to prevent flash -->
+        <script>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+        </script>
+
+        <!-- Custom CSS -->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+            <span class="toggle-icon"></span>
+        </button>
+
+        <script>
+            (function() {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || 'dark';
+                document.documentElement.setAttribute('data-theme', theme);
+
+                function updateToggle() {
+                    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                    var icon = document.querySelector('.toggle-icon');
+                    if (icon) icon.textContent = isDark ? '\u2600' : '\u263E';
+                }
+
+                window.toggleTheme = function() {
+                    var current = document.documentElement.getAttribute('data-theme');
+                    var next = current === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', next);
+                    localStorage.setItem('theme', next);
+                    updateToggle();
+                };
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', updateToggle);
+                } else {
+                    updateToggle();
+                }
+            })();
+        </script>
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-container">
+                <div class="hero-photo">
+                    <div class="photo-glow"></div>
+                    <img src="assets/img/pfp.png" alt="George Strauch" class="profile-photo" />
+                </div>
+
+                <div class="hero-content">
+                    <h1 class="hero-name">George E. Strauch V</h1>
+                    <p class="hero-title">Software Engineer</p>
+
+                    <div class="contact-buttons">
+<a href="mailto:Gestrauch5@gmail.com" class="contact-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>Gestrauch5@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/George-Strauch" target="_blank" class="contact-btn">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/George-Strauch</span>
+                        </a>
+                    </div>
+
+                    <div class="achievement-cards">
+                        <div class="achievement-card gold">
+                            <div class="achievement-accent"></div>
+                            <div class="achievement-content">
+                                <i class="fas fa-network-wired achievement-badge"></i>
+                                <span class="achievement-label">Network Design Automation</span>
+                            </div>
+                        </div>
+                        <div class="achievement-card gold">
+                            <div class="achievement-accent"></div>
+                            <div class="achievement-content">
+                                <i class="fas fa-award achievement-badge"></i>
+                                <span class="achievement-label">IEEE Published Research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Skills Ribbon -->
+        <section class="skills-ribbon">
+            <div class="skills-container">
+                <span class="skill-pill">System Design</span>
+                <span class="skill-pill">API Architecture</span>
+                <span class="skill-pill">Frontend</span>
+                <span class="skill-pill">Backend</span>
+                <span class="skill-pill">LLM Integration</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section">
+            <div class="section-container">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    Software engineer with 4+ years designing and building production systems at Charter Communications.
+                    Thinks in architecture: APIs, data flow, integration points. Then picks the right tools to build it.
+                    Works end-to-end from stakeholder requirements through deployment, across backend services, frontend
+                    interfaces, and automation pipelines.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section experience-section">
+            <div class="section-container">
+                <div class="experience-layout">
+                    <div class="experience-main">
+                        <h2 class="section-title">Experience</h2>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="job-header">
+                                        <h3 class="job-title">Software Engineer, Network Automation</h3>
+                                        <span class="job-company">Charter Communications</span>
+                                        <span class="job-dates">February 2022 - Present</span>
+                                    </div>
+                                    <div class="job-description">
+                                        <p>
+                                            Design and build internal systems automating network equipment design
+                                            and post-install configuration. Own architecture decisions across backend
+                                            services, APIs, and frontend interfaces. Gather requirements directly from
+                                            field technicians and network engineers.
+                                        </p>
+                                        <p>
+                                            Architect and lead automation system for Cisco Meraki device configuration:
+                                            15,000+ devices across 7,000+ locations nationwide. Each automation saves
+                                            ~$100 and 2 hours labor per install.
+                                        </p>
+                                        <div class="job-tech">
+                                            <span class="tech-tag">Python</span>
+                                            <span class="tech-tag">Django</span>
+                                            <span class="tech-tag">ReactJS</span>
+                                            <span class="tech-tag">Angular</span>
+                                            <span class="tech-tag">Flask</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="job-header">
+                                        <h3 class="job-title">Undergraduate Research & ML Grader</h3>
+                                        <span class="job-company">Texas State University</span>
+                                        <span class="job-dates">February 2021 - December 2021</span>
+                                    </div>
+                                    <div class="job-description">
+                                        <p>
+                                            Applied ML to computer vision problems: maritime activity detection (small boat
+                                            classification from video) and visual feature extraction for object search/retrieval.
+                                            Published findings in
+                                            <a href="https://ieeexplore.ieee.org/document/9671274" target="_blank" class="text-link">IEEE</a>.
+                                        </p>
+                                        <p>
+                                            Graded coursework and provided feedback for ~65 students in ML 4347. Managed course
+                                            GitHub repositories and assisted with curriculum planning.
+                                        </p>
+                                        <div class="job-tech">
+                                            <span class="tech-tag">Machine Learning</span>
+                                            <span class="tech-tag">Computer Vision</span>
+                                            <span class="tech-tag">Python</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="metrics-sidebar">
+                        <h3 class="sidebar-title">Impact Metrics</h3>
+                        <div class="metric-card">
+                            <span class="metric-value">15,000+</span>
+                            <span class="metric-label">Devices Configured</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">7,000+</span>
+                            <span class="metric-label">Locations Nationwide</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">$100</span>
+                            <span class="metric-label">Saved Per Install</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">2 hrs</span>
+                            <span class="metric-label">Labor Saved Per Install</span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section projects-section">
+            <div class="section-container">
+                <h2 class="section-title">Projects</h2>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Network Design Automation</h3>
+                            <span class="project-date">2023 - Present</span>
+                        </div>
+                        <p class="project-description">
+                            End-to-end system automating large-scale Cisco Meraki network configuration
+                            at Charter. Backend services, API layer, and frontend dashboard.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Django</span>
+                            <span class="project-tag">ReactJS</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card featured">
+                        <div class="featured-badge">
+                            <i class="fas fa-award"></i> IEEE Featured
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-title">Maritime Activity Detection</h3>
+                            <span class="project-date">2021</span>
+                        </div>
+                        <p class="project-description">
+                            Detects, localizes, and classifies small boat activity from video feeds
+                            for automated early warning. Published at UMBC BigData REU Symposium and IEEE.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Computer Vision</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">ReactJS Website Template</h3>
+                            <span class="project-date">2024</span>
+                        </div>
+                        <p class="project-description">
+                            Rebrandable website template designed for fast deployment of portfolios
+                            and small business sites.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">ReactJS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Discord Bot</h3>
+                            <span class="project-date">2023</span>
+                        </div>
+                        <p class="project-description">
+                            Chat bot integrating multiple third-party APIs (weather, stock, analytics)
+                            for automated commands and notifications.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Similarity Indexing</h3>
+                            <span class="project-date">2021</span>
+                        </div>
+                        <p class="project-description">
+                            ResNet50-based feature extraction with nearest neighbor search
+                            in high-dimensional vector space.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">CNN</span>
+                            <span class="project-tag">ResNet50</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section education-section">
+            <div class="section-container">
+                <h2 class="section-title">Education</h2>
+
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3 class="education-school">Texas State University</h3>
+                            <p class="education-location">San Marcos, TX</p>
+                            <p class="education-dates">August 2018 - December 2021</p>
+                            <p class="education-degree">Bachelor of Science: Applied Mathematics and Computer Science</p>
+                            <div class="education-honors">
+                                <span class="honor-badge">Dean's List - Fall 2018 & Spring 2019</span>
+                                <span class="honor-badge">Academic Distinction - Fall 2020</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-connector"></div>
+
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3 class="education-school">Northwest Vista College</h3>
+                            <p class="education-location">San Antonio, TX</p>
+                            <p class="education-dates">August 2016 - May 2018</p>
+                            <p class="education-degree">Associates: Computer Science</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
