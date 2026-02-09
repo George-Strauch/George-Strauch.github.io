@@ -865,6 +865,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media print {
+    /* --- Force light-theme colors regardless of active theme --- */
+    :root,
+    [data-theme="dark"],
+    [data-theme="light"] {
+        --ink: #111111;
+        --paper: #fafafa;
+        --white: #ffffff;
+        --muted: #555555;
+        --light-gray: #e0e0e0;
+        --accent: #4a5568;
+        --accent-dark: #3a4455;
+        --highlight: #c47a2a;
+        --shadow-hard: none;
+        --shadow-accent: none;
+    }
+
+    /* --- Reset animations & ensure color accuracy --- */
     *,
     *::before,
     *::after {
@@ -875,11 +892,28 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     body {
-        font-size: 10pt;
+        font-size: 11pt;
         line-height: 1.4;
         background: white;
+        color: var(--ink);
     }
 
+    /* --- Hide elements not needed in print --- */
+    .theme-toggle {
+        display: none;
+    }
+
+    /* --- Hide metrics sidebar, make experience full-width --- */
+    .metrics-sidebar {
+        display: none !important;
+    }
+
+    .experience-layout {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    /* --- Hero --- */
     .hero {
         padding: 0 0 0.5rem 0;
     }
@@ -895,17 +929,17 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-name {
-        font-size: 20pt;
+        font-size: 24pt;
     }
 
     .hero-title {
-        font-size: 9pt;
+        font-size: 11pt;
     }
 
     .contact-btn {
         border-width: 1px;
         padding: 2px 6px;
-        font-size: 8pt;
+        font-size: 9pt;
     }
 
     .achievement-cards {
@@ -918,9 +952,10 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .achievement-label {
-        font-size: 7pt;
+        font-size: 8pt;
     }
 
+    /* --- Skills ribbon --- */
     .skills-ribbon {
         padding: 0.3rem 0;
         background: var(--paper) !important;
@@ -928,37 +963,36 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .skill-pill {
-        font-size: 7pt;
+        font-size: 8pt;
         padding: 1px 6px;
         color: var(--ink) !important;
         border-color: var(--ink) !important;
     }
 
+    /* --- Sections --- */
     .section {
-        padding: 0.6rem 0;
-        page-break-inside: avoid;
+        padding: 1.25rem 0;
+        /* Allow sections to break across pages naturally */
     }
 
     .section-title {
-        font-size: 12pt;
+        font-size: 14pt;
         letter-spacing: 2px;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
         padding-bottom: 0.2rem;
         border-bottom-width: 2px;
+        page-break-after: avoid;
     }
 
+    /* --- About --- */
     .about-text {
-        font-size: 9.5pt;
+        font-size: 10.5pt;
         border-left-width: 2px;
         padding-left: 0.75rem;
-        line-height: 1.5;
+        line-height: 1.6;
     }
 
-    .experience-layout {
-        grid-template-columns: 1fr 160px;
-        gap: 0.75rem;
-    }
-
+    /* --- Timeline / Experience --- */
     .timeline {
         padding-left: 0.75rem;
     }
@@ -976,69 +1010,49 @@ h1, h2, h3, h4, h5, h6 {
 
     .timeline-content {
         border-width: 1px;
-        padding: 0.5rem;
+        padding: 0.75rem;
         box-shadow: none !important;
         transform: none !important;
+        page-break-inside: avoid;
     }
 
     .timeline-item {
-        padding-bottom: 0.6rem;
+        padding-bottom: 1.25rem;
     }
 
     .job-title {
-        font-size: 10pt;
+        font-size: 12pt;
     }
 
     .job-company {
-        font-size: 9pt;
+        font-size: 10pt;
     }
 
     .job-dates {
-        font-size: 7.5pt;
+        font-size: 8.5pt;
     }
 
     .job-description p {
-        font-size: 9pt;
+        font-size: 10pt;
         line-height: 1.4;
         margin-bottom: 0.3rem;
     }
 
     .tech-tag,
     .project-tag {
-        font-size: 6.5pt;
+        font-size: 7.5pt;
         padding: 1px 4px;
     }
 
-    .metric-card {
-        border-width: 1px;
-        padding: 0.25rem;
-        margin-bottom: 0.3rem;
-        box-shadow: none !important;
-        transform: none !important;
-    }
-
-    .metric-value {
-        font-size: 11pt;
-    }
-
-    .metric-label {
-        font-size: 6pt;
-    }
-
-    .sidebar-title {
-        font-size: 7pt;
-        margin-bottom: 0.3rem;
-        padding-bottom: 0.15rem;
-    }
-
+    /* --- Projects --- */
     .projects-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 
     .project-card {
         border-width: 1px;
-        padding: 0.5rem;
+        padding: 0.75rem;
         box-shadow: none !important;
         transform: none !important;
         page-break-inside: avoid;
@@ -1049,7 +1063,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .project-title {
-        font-size: 9pt;
+        font-size: 10pt;
     }
 
     .project-date {
@@ -1057,7 +1071,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .project-description {
-        font-size: 8.5pt;
+        font-size: 9.5pt;
         line-height: 1.3;
         margin-bottom: 0.25rem;
     }
@@ -1067,15 +1081,16 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 6pt;
     }
 
+    /* --- Education --- */
     .education-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 
     .education-card {
         border-width: 1px;
-        padding: 0.5rem;
-        gap: 0.5rem;
+        padding: 0.75rem;
+        gap: 0.75rem;
         box-shadow: none !important;
         transform: none !important;
         page-break-inside: avoid;
@@ -1088,23 +1103,24 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .education-school {
-        font-size: 9pt;
+        font-size: 10pt;
     }
 
     .education-location,
     .education-dates {
-        font-size: 7.5pt;
-    }
-
-    .education-degree {
         font-size: 8.5pt;
     }
 
+    .education-degree {
+        font-size: 9.5pt;
+    }
+
     .honor-badge {
-        font-size: 6.5pt;
+        font-size: 7.5pt;
         padding: 1px 4px;
     }
 
+    /* --- Links --- */
     a {
         color: var(--ink);
         border-bottom: none;
@@ -1117,10 +1133,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .contact-btn[href]::after {
-        display: none;
-    }
-
-    .theme-toggle {
         display: none;
     }
 }
