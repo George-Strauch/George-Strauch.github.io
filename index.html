@@ -18,7 +18,7 @@
 
         <!-- Set theme before CSS to prevent flash -->
         <script>
-            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
         </script>
 
         <!-- Custom CSS -->
@@ -33,7 +33,7 @@
         <script>
             (function() {
                 var saved = localStorage.getItem('theme');
-                var theme = saved || 'dark';
+                var theme = saved || 'light';
                 document.documentElement.setAttribute('data-theme', theme);
 
                 function updateToggle() {
