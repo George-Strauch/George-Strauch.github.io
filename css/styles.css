@@ -7,21 +7,21 @@
    Design Tokens
    -------------------------------------------------------------------------- */
 :root {
-    /* Color roles (light) — triadic: violet / emerald / amber */
+    /* Color roles (light) — analogous blues: violet / cyan / royal */
     --md-primary: #5B4EE8;
     --md-on-primary: #FFFFFF;
     --md-primary-container: #E4E0FF;
     --md-on-primary-container: #1E1566;
 
-    --md-secondary: #0E9F6E;
+    --md-secondary: #0891B2;
     --md-on-secondary: #FFFFFF;
-    --md-secondary-container: #C7F0DE;
-    --md-on-secondary-container: #003D28;
+    --md-secondary-container: #C5ECF3;
+    --md-on-secondary-container: #003945;
 
-    --md-tertiary: #D97706;
+    --md-tertiary: #2563EB;
     --md-on-tertiary: #FFFFFF;
-    --md-tertiary-container: #FFE7B8;
-    --md-on-tertiary-container: #4A2800;
+    --md-tertiary-container: #DBEAFE;
+    --md-on-tertiary-container: #1E3A8A;
 
     --md-surface: #FDFBFF;
     --md-surface-container-low: #F7F3FC;
@@ -90,15 +90,15 @@
     --md-primary-container: #4238B0;
     --md-on-primary-container: #E6E1FF;
 
-    --md-secondary: #5FDBA0;
-    --md-on-secondary: #003820;
-    --md-secondary-container: #00593A;
-    --md-on-secondary-container: #98F5C0;
+    --md-secondary: #67E8F9;
+    --md-on-secondary: #003945;
+    --md-secondary-container: #00586B;
+    --md-on-secondary-container: #B3F3FF;
 
-    --md-tertiary: #FBBF24;
-    --md-on-tertiary: #3E2900;
-    --md-tertiary-container: #5E3D00;
-    --md-on-tertiary-container: #FFDFA8;
+    --md-tertiary: #93C5FD;
+    --md-on-tertiary: #0C2A62;
+    --md-tertiary-container: #1E3A8A;
+    --md-on-tertiary-container: #DBEAFE;
 
     --md-surface: #131019;
     --md-surface-container-low: #1C1823;
@@ -1104,11 +1104,11 @@ h1, h2, h3, h4, h5, h6 {
         --md-on-primary: #FFFFFF;
         --md-primary-container: #E4E0FF;
         --md-on-primary-container: #1E1566;
-        --md-secondary: #0E9F6E;
-        --md-secondary-container: #C7F0DE;
-        --md-on-secondary-container: #003D28;
-        --md-tertiary-container: #FFE7B8;
-        --md-on-tertiary-container: #4A2800;
+        --md-secondary: #0891B2;
+        --md-secondary-container: #C5ECF3;
+        --md-on-secondary-container: #003945;
+        --md-tertiary-container: #DBEAFE;
+        --md-on-tertiary-container: #1E3A8A;
         --md-surface: #FFFFFF;
         --md-surface-container-low: #FAFAFA;
         --md-surface-container: #F5F5F5;
