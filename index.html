@@ -27,7 +27,8 @@
     <body>
         <!-- Theme Toggle -->
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-            <span class="toggle-icon"></span>
+            <i class="fas fa-moon toggle-icon icon-moon" aria-hidden="true"></i>
+            <i class="fas fa-sun toggle-icon icon-sun" aria-hidden="true"></i>
         </button>
 
         <script>
@@ -36,25 +37,12 @@
                 var theme = saved || 'light';
                 document.documentElement.setAttribute('data-theme', theme);
 
-                function updateToggle() {
-                    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                    var icon = document.querySelector('.toggle-icon');
-                    if (icon) icon.textContent = isDark ? '\u2600' : '\u263E';
-                }
-
                 window.toggleTheme = function() {
                     var current = document.documentElement.getAttribute('data-theme');
                     var next = current === 'dark' ? 'light' : 'dark';
                     document.documentElement.setAttribute('data-theme', next);
                     localStorage.setItem('theme', next);
-                    updateToggle();
                 };
-
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', updateToggle);
-                } else {
-                    updateToggle();
-                }
             })();
         </script>
 
