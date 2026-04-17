@@ -13,15 +13,15 @@
     --md-primary-container: #E4E0FF;
     --md-on-primary-container: #1E1566;
 
-    --md-secondary: #0891B2;
+    --md-secondary: #3B82F6;
     --md-on-secondary: #FFFFFF;
-    --md-secondary-container: #C5ECF3;
-    --md-on-secondary-container: #003945;
+    --md-secondary-container: #DBEAFE;
+    --md-on-secondary-container: #1E3A8A;
 
-    --md-tertiary: #2563EB;
+    --md-tertiary: #1D4ED8;
     --md-on-tertiary: #FFFFFF;
-    --md-tertiary-container: #DBEAFE;
-    --md-on-tertiary-container: #1E3A8A;
+    --md-tertiary-container: #C7D2FE;
+    --md-on-tertiary-container: #1E1B4B;
 
     --md-surface: #FDFBFF;
     --md-surface-container-low: #F7F3FC;
@@ -90,15 +90,15 @@
     --md-primary-container: #4238B0;
     --md-on-primary-container: #E6E1FF;
 
-    --md-secondary: #67E8F9;
-    --md-on-secondary: #003945;
-    --md-secondary-container: #00586B;
-    --md-on-secondary-container: #B3F3FF;
+    --md-secondary: #93C5FD;
+    --md-on-secondary: #0C2A62;
+    --md-secondary-container: #1E3A8A;
+    --md-on-secondary-container: #DBEAFE;
 
-    --md-tertiary: #93C5FD;
+    --md-tertiary: #60A5FA;
     --md-on-tertiary: #0C2A62;
-    --md-tertiary-container: #1E3A8A;
-    --md-on-tertiary-container: #DBEAFE;
+    --md-tertiary-container: #312E81;
+    --md-on-tertiary-container: #E0E7FF;
 
     --md-surface: #131019;
     --md-surface-container-low: #1C1823;
@@ -700,16 +700,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-1px);
 }
 
-.metric-card:nth-child(3n+2) {
-    background: var(--md-secondary-container);
-    color: var(--md-on-secondary-container);
-}
-
-.metric-card:nth-child(3n+3) {
-    background: var(--md-tertiary-container);
-    color: var(--md-on-tertiary-container);
-}
-
 .metric-value {
     display: block;
     font-family: var(--font-display);
@@ -1104,11 +1094,11 @@ h1, h2, h3, h4, h5, h6 {
         --md-on-primary: #FFFFFF;
         --md-primary-container: #E4E0FF;
         --md-on-primary-container: #1E1566;
-        --md-secondary: #0891B2;
-        --md-secondary-container: #C5ECF3;
-        --md-on-secondary-container: #003945;
-        --md-tertiary-container: #DBEAFE;
-        --md-on-tertiary-container: #1E3A8A;
+        --md-secondary: #3B82F6;
+        --md-secondary-container: #DBEAFE;
+        --md-on-secondary-container: #1E3A8A;
+        --md-tertiary-container: #C7D2FE;
+        --md-on-tertiary-container: #1E1B4B;
         --md-surface: #FFFFFF;
         --md-surface-container-low: #FAFAFA;
         --md-surface-container: #F5F5F5;
