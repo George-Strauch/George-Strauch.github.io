@@ -1,6 +1,6 @@
-// The page's few behaviours: the theme menu, the phone drawer, full screen for any box, the side nav
-// following the scroll, the flash on the box a link jumps to, and the footer (the deployed commit and
-// a UTC clock).
+// The page's few behaviours: the theme menu, the phone drawer, full screen for any box, the photo at
+// full size, the side nav following the scroll, the flash on the box a link jumps to, and the footer
+// (the deployed commit and a UTC clock).
 (function () {
   "use strict";
 
@@ -129,7 +129,20 @@
     box.querySelector(".ui-box-head").appendChild(btn);
   });
 
+  // ---------------------------------------------------------------- the photo at full size
+  var viewer = document.getElementById("photo-viewer");
+  document.querySelector(".gs-photo").addEventListener("click", function (e) {
+    if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;   // a new tab gets the file
+    e.preventDefault();
+    viewer.showModal();
+  });
+  viewer.addEventListener("click", function (e) {
+    // the photo, the backdrop or the close button; not the rest of the head strip
+    if (!e.target.closest(".ui-box-head") || e.target.closest(".gs-viewer-close")) viewer.close();
+  });
+
   document.addEventListener("keydown", function (e) {
+    if (viewer.open) return;   // the viewer handles its own Esc
     if (e.key === "Escape") {
       if (!themeMenu.hidden) closeMenu(true);
       else if (fsBox) setFullScreen(fsBox, false);

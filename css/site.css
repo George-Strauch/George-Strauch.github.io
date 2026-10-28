@@ -282,15 +282,47 @@ body.gs-has-fs { overflow: hidden; }
 .gs-sub-label { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; font-size: 10.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--faint); }
 .gs-sub-title { margin: 0 0 3px; font-weight: 650; font-size: 13.5px; color: var(--heading); }
 
-/* the profile's head: photo, name, role */
-.gs-id { display: flex; align-items: center; gap: 14px; padding: 12px; border-bottom: 1px solid var(--border); }
+/* the profile: the photo beside the name with the facts below; in a wide box the facts move up beside the photo */
+.gs-profile-box { container-type: inline-size; }
+.gs-profile { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "photo id" "facts facts"; align-content: start; }
+.gs-profile > .ui-facts { grid-area: facts; border-top: 1px solid var(--border); }
+.gs-id { grid-area: id; align-self: center; min-width: 0; padding: 12px 12px 12px 16px; }
 .gs-photo {
-  width: 84px; height: 84px; flex: none; display: block; object-fit: cover; object-position: 50% 28%;
-  border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--bg2);
+  grid-area: photo; position: relative; display: block; width: clamp(112px, 42cqi, 200px); margin: 12px 0 12px 12px;
+  border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--bg2); overflow: hidden; cursor: zoom-in;
+}
+.gs-photo img { display: block; width: 100%; height: auto; }
+.gs-photo:hover { border-color: var(--accent); }
+.gs-photo-zoom {
+  position: absolute; right: 5px; bottom: 5px; display: grid; place-items: center; width: 24px; height: 24px;
+  border-radius: var(--radius); background: rgba(7, 8, 10, .72); color: #fff; opacity: 0; transition: opacity .12s;
+}
+.gs-photo:hover .gs-photo-zoom, .gs-photo:focus-visible .gs-photo-zoom { opacity: 1; }
+@media (hover: none) { .gs-photo-zoom { opacity: 1; } }
+.gs-photo-zoom svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+@container (min-width: 600px) {
+  .gs-profile { grid-template-areas: "photo id" "photo facts"; grid-template-rows: auto 1fr; }
+  .gs-photo { width: clamp(200px, 34cqi, 300px); align-self: start; }
+  .gs-id { align-self: end; padding-bottom: 4px; }
+  .gs-profile > .ui-facts { border-top: 0; padding-left: 16px; }
 }
 .gs-id-name { font-weight: 700; font-size: 15px; color: var(--heading); }
 .gs-id-sub { margin-top: 2px; font-size: 12.5px; color: var(--dim); }
 .gs-id-sub.is-mono { font-family: var(--mono); font-size: 11.5px; color: var(--faint); }
+
+/* the photo at full size, in a box over the page (a click or Esc closes it) */
+.gs-viewer {
+  padding: 0; border: 1px solid var(--border-strong); border-radius: var(--radius-lg); overflow: hidden;
+  max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px);
+  background: var(--bg0); color: var(--text); box-shadow: var(--shadow);
+}
+.gs-viewer::backdrop { background: rgba(4, 5, 7, .8); }
+.gs-viewer-close { margin-left: auto; margin-right: -4px; }
+.gs-viewer-close svg { width: 14px; height: 14px; }
+.gs-viewer > img {
+  display: block; width: auto; height: auto; cursor: zoom-out;
+  max-width: calc(100vw - 26px); max-height: calc(100dvh - 26px - 33px);
+}
 
 .gs-link-line { margin-top: 10px; font-size: 12.5px; }
 .gs-link-line .is-mono { font-family: var(--mono); font-size: 11.5px; }
@@ -334,7 +366,7 @@ body.gs-has-fs { overflow: hidden; }
     --heading: #000; --text: #111; --dim: #444; --faint: #666;
     --accent: #1f5fbd; --accent-bright: #1f5fbd;
   }
-  .gs-top, .gs-side, .gs-scrim, .gs-foot, .gs-skip, .gs-fs-btn { display: none !important; }
+  .gs-top, .gs-side, .gs-scrim, .gs-foot, .gs-skip, .gs-fs-btn, .gs-photo-zoom, .gs-viewer { display: none !important; }
   .ui-box.is-emph, .ui-box.is-emph > .ui-box-head { animation: none; }
   .gs-shell { display: block; }
   .gs-main { padding: 0; }

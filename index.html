@@ -66,16 +66,17 @@
     </div>
 
     <div class="gs-grid">
-      <section class="ui-box" aria-labelledby="profile-title">
+      <section class="ui-box gs-profile-box" aria-labelledby="profile-title">
         <header class="ui-box-head"><h2 class="ui-box-title" id="profile-title">Profile</h2></header>
-        <div class="ui-box-body">
+        <div class="ui-box-body gs-profile">
+          <a class="gs-photo" href="assets/img/pfp.png" aria-label="Photo of George Strauch, view full size" title="View full size">
+            <img src="assets/img/pfp.png" alt="" width="627" height="581">
+            <span class="gs-photo-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8M10.5 7.5v6M7.5 10.5h6"/></svg></span>
+          </a>
           <div class="gs-id">
-            <img class="gs-photo" src="assets/img/pfp.png" alt="George Strauch" width="84" height="84">
-            <div>
-              <div class="gs-id-name">George E. Strauch V</div>
-              <div class="gs-id-sub">Software engineer</div>
-              <div class="gs-id-sub is-mono">Austin, TX</div>
-            </div>
+            <div class="gs-id-name">George E. Strauch V</div>
+            <div class="gs-id-sub">Software engineer</div>
+            <div class="gs-id-sub is-mono">Austin, TX</div>
           </div>
           <dl class="ui-facts">
             <div class="ui-fact"><dt>Employer</dt><dd>Charter Communications</dd></div>
@@ -233,5 +234,14 @@
     <span class="gs-clock" id="clock">0000-00-00 00:00:00 UTC</span>
   </footer>
 </div>
+
+<dialog class="gs-viewer" id="photo-viewer" aria-labelledby="photo-viewer-title">
+  <header class="ui-box-head">
+    <h2 class="ui-box-title" id="photo-viewer-title">Photo</h2>
+    <span class="ui-box-count">627 × 581</span>
+    <button type="button" class="ui-btn ghost xs icon gs-viewer-close" aria-label="Close" title="Close (Esc)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </header>
+  <img src="assets/img/pfp.png" alt="George Strauch" width="627" height="581">
+</dialog>
 </body>
 </html>
