@@ -1,5 +1,6 @@
-// The page's few behaviours: the theme menu, the phone drawer, the side nav following the scroll,
-// and the footer (the deployed commit and a UTC clock).
+// The page's few behaviours: the theme menu, the phone drawer, full screen for any box, the side nav
+// following the scroll, the flash on the box a link jumps to, and the footer (the deployed commit and
+// a UTC clock).
 (function () {
   "use strict";
 
@@ -100,11 +101,66 @@
   window.matchMedia("(min-width: 761px)").addEventListener("change", function (e) {
     if (e.matches && drawerOpen()) setDrawer(false, false);
   });
-  document.addEventListener("keydown", function (e) {
-    if (e.key !== "Escape") return;
-    if (!themeMenu.hidden) closeMenu(true);
-    else if (drawerOpen()) setDrawer(false, true);
+  // ---------------------------------------------------------------- full screen: a box covers the window
+  var ICON_EXPAND = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+  var ICON_SHRINK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
+  var fsBox = null;
+
+  function markFsButton(btn, on) {
+    btn.innerHTML = on ? ICON_SHRINK : ICON_EXPAND;
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    btn.setAttribute("aria-label", on ? "Leave full screen" : "Full screen");
+    btn.title = on ? "Leave full screen (Esc)" : "Full screen (F)";
+  }
+  function setFullScreen(box, on) {
+    if (on && fsBox && fsBox !== box) setFullScreen(fsBox, false);
+    box.classList.toggle("is-fs", on);
+    document.body.classList.toggle("gs-has-fs", on);
+    markFsButton(box.querySelector(".gs-fs-btn"), on);
+    fsBox = on ? box : null;
+  }
+  Array.prototype.slice.call(document.querySelectorAll(".gs-main .ui-box")).forEach(function (box) {
+    box.tabIndex = -1;   // a click inside focuses the box, so F knows which one
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "ui-btn ghost xs icon gs-fs-btn";
+    markFsButton(btn, false);
+    btn.addEventListener("click", function () { setFullScreen(box, !box.classList.contains("is-fs")); });
+    box.querySelector(".ui-box-head").appendChild(btn);
   });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if (!themeMenu.hidden) closeMenu(true);
+      else if (fsBox) setFullScreen(fsBox, false);
+      else if (drawerOpen()) setDrawer(false, true);
+    } else if ((e.key === "f" || e.key === "F") && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      var box = document.activeElement && document.activeElement.closest(".gs-main .ui-box");
+      if (box) { e.preventDefault(); setFullScreen(box, !box.classList.contains("is-fs")); }
+    }
+  });
+
+  // ---------------------------------------------------------------- a jump to a section flashes its box
+  // The id is a box, or (Overview) the page head, whose row of boxes flashes together.
+  function emphasize(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var group = el.classList.contains("ui-box") ? [el]
+      : Array.prototype.slice.call((el.nextElementSibling || el).querySelectorAll(".ui-box"));
+    group.forEach(function (box) {
+      box.classList.remove("is-emph");
+      void box.offsetWidth;   // restart the animation on a repeat click
+      box.classList.add("is-emph");
+      window.clearTimeout(box.emphTimer);
+      box.emphTimer = window.setTimeout(function () { box.classList.remove("is-emph"); }, 2400);
+    });
+    if (group.length) group[0].focus({ preventScroll: true });
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (a && !a.classList.contains("gs-skip")) emphasize(a.getAttribute("href").slice(1));
+  });
+  if (location.hash.length > 1) emphasize(decodeURIComponent(location.hash.slice(1)));
 
   // ---------------------------------------------------------------- the side nav follows the scroll
   var links = Array.prototype.slice.call(side.querySelectorAll('a.gs-navitem[href^="#"]'));
