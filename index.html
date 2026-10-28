@@ -1,385 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="George Strauch - Software Engineer" />
-        <meta name="author" content="George Strauch" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="George E. Strauch V, software engineer in Austin, Texas. Network automation at Charter Communications.">
+  <meta name="author" content="George Strauch">
+  <meta name="color-scheme" content="dark light">
+  <title>George E. Strauch V</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2307080a'/%3E%3Crect x='1.5' y='1.5' width='29' height='29' rx='3' fill='none' stroke='%237aa2f7' stroke-width='2'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='700' text-anchor='middle' fill='%23e5e9f0'%3EGS%3C/text%3E%3C/svg%3E">
+  <!-- The visitor's theme choice, applied before the stylesheet paints. -->
+  <script>
+    try { var t = localStorage.getItem("ges.theme"); if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/site.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+<a class="gs-skip" href="#main">Skip to content</a>
 
-        <title>George E. Strauch V</title>
+<div class="gs-shell">
+  <header class="gs-top">
+    <button class="ui-btn ghost icon gs-burger" id="nav-btn" type="button" aria-label="Sections" aria-controls="gs-side" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="gs-brand" href="#overview">George Strauch</a>
+    <span class="ui-spacer"></span>
+    <nav class="gs-toplinks" aria-label="Contact">
+      <a class="ui-btn ghost sm" href="mailto:gestrauch5@gmail.com">Email</a>
+      <a class="ui-btn ghost sm" href="https://github.com/George-Strauch">GitHub</a>
+    </nav>
+    <div class="ui-menubtn">
+      <button class="ui-btn ghost sm" id="theme-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
+        Theme <svg class="gs-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="ui-menu ui-menu--right" id="theme-menu" role="menu" aria-label="Theme" hidden>
+        <div class="ui-menu-label">Theme</div>
+        <button class="ui-menu-item" type="button" role="menuitemradio" aria-checked="false" data-theme-choice="system">Follow the system</button>
+        <button class="ui-menu-item" type="button" role="menuitemradio" aria-checked="false" data-theme-choice="dark">Dark</button>
+        <button class="ui-menu-item" type="button" role="menuitemradio" aria-checked="false" data-theme-choice="light">Light</button>
+      </div>
+    </div>
+  </header>
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <nav class="gs-side" id="gs-side" aria-label="Sections">
+    <div class="gs-navgroup">
+      <div class="gs-navgroup-label">Career</div>
+      <a class="gs-navitem active" href="#overview">Overview</a>
+      <a class="gs-navitem" href="#experience">Experience</a>
+      <a class="gs-navitem" href="#research">Research</a>
+      <a class="gs-navitem" href="#education">Education</a>
+      <a class="gs-navitem" href="#stack">Stack</a>
+    </div>
+    <div class="gs-navgroup gs-navgroup--bottom">
+      <div class="gs-navgroup-label">Contact</div>
+      <a class="gs-navitem" href="mailto:gestrauch5@gmail.com">Email</a>
+      <a class="gs-navitem" href="https://github.com/George-Strauch">GitHub</a>
+    </div>
+  </nav>
+  <div class="gs-scrim"></div>
 
-        <!-- Font Awesome icons -->
-        <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" crossorigin="anonymous"></script>
+  <main class="gs-main" id="main">
+    <div class="gs-pagehead" id="overview">
+      <h1>George E. Strauch V</h1>
+      <span class="gs-pagehead-sub">Software engineer<span class="gs-sep">·</span>Network automation at Charter Communications<span class="gs-sep">·</span>Austin, TX</span>
+    </div>
 
-        <!-- Set theme before CSS to prevent flash -->
-        <script>
-            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
-        </script>
-
-        <!-- Custom CSS -->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Theme Toggle -->
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-            <span class="toggle-icon" aria-hidden="true"></span>
-        </button>
-
-        <script>
-            (function() {
-                // Bootstrap Icons SVGs (react-icons/bs equivalents: BsSun, BsMoon)
-                var ICON_SUN = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg>';
-                var ICON_MOON = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/></svg>';
-
-                var saved = localStorage.getItem('theme');
-                var theme = saved || 'light';
-                document.documentElement.setAttribute('data-theme', theme);
-
-                function renderIcon() {
-                    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                    var slot = document.querySelector('.toggle-icon');
-                    if (slot) slot.innerHTML = isDark ? ICON_SUN : ICON_MOON;
-                }
-
-                window.toggleTheme = function() {
-                    var current = document.documentElement.getAttribute('data-theme');
-                    var next = current === 'dark' ? 'light' : 'dark';
-                    document.documentElement.setAttribute('data-theme', next);
-                    localStorage.setItem('theme', next);
-                    renderIcon();
-                };
-
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', renderIcon);
-                } else {
-                    renderIcon();
-                }
-            })();
-        </script>
-
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="hero-container">
-                <div class="hero-photo">
-                    <div class="photo-glow"></div>
-                    <img src="assets/img/pfp.png" alt="George Strauch" class="profile-photo" />
-                </div>
-
-                <div class="hero-content">
-                    <h1 class="hero-name">George E. Strauch V</h1>
-                    <p class="hero-title">Software Engineer</p>
-
-                    <div class="contact-buttons">
-<a href="mailto:Gestrauch5@gmail.com" class="contact-btn">
-                            <i class="fas fa-envelope"></i>
-                            <span>Gestrauch5@gmail.com</span>
-                        </a>
-                        <a href="https://github.com/George-Strauch" target="_blank" class="contact-btn">
-                            <i class="fab fa-github"></i>
-                            <span>github.com/George-Strauch</span>
-                        </a>
-                    </div>
-
-                    <div class="achievement-cards">
-                        <div class="achievement-card gold">
-                            <div class="achievement-accent"></div>
-                            <div class="achievement-content">
-                                <i class="fas fa-graduation-cap achievement-badge"></i>
-                                <span class="achievement-label">BS Applied Mathematics & Computer Science</span>
-                            </div>
-                        </div>
-                        <div class="achievement-card gold">
-                            <div class="achievement-accent"></div>
-                            <div class="achievement-content">
-                                <i class="fas fa-network-wired achievement-badge"></i>
-                                <span class="achievement-label">Network Design Automation</span>
-                            </div>
-                        </div>
-                        <div class="achievement-card gold">
-                            <div class="achievement-accent"></div>
-                            <div class="achievement-content">
-                                <i class="fas fa-award achievement-badge"></i>
-                                <span class="achievement-label">IEEE Published Research</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="gs-grid">
+      <section class="ui-box" aria-labelledby="profile-title">
+        <header class="ui-box-head"><h2 class="ui-box-title" id="profile-title">Profile</h2></header>
+        <div class="ui-box-body">
+          <div class="gs-id">
+            <img class="gs-photo" src="assets/img/pfp.png" alt="George Strauch" width="84" height="84">
+            <div>
+              <div class="gs-id-name">George E. Strauch V</div>
+              <div class="gs-id-sub">Software engineer</div>
+              <div class="gs-id-sub is-mono">Austin, TX</div>
             </div>
+          </div>
+          <dl class="ui-facts">
+            <div class="ui-fact"><dt>Employer</dt><dd>Charter Communications</dd></div>
+            <div class="ui-fact"><dt>Role</dt><dd>Software Engineer, Network Automation</dd></div>
+            <div class="ui-fact"><dt>Since</dt><dd class="is-mono">2022-02</dd></div>
+            <div class="ui-fact"><dt>Degree</dt><dd>B.S. Applied Mathematics and Computer Science</dd></div>
+            <div class="ui-fact"><dt>Email</dt><dd class="is-mono"><a href="mailto:gestrauch5@gmail.com">gestrauch5@gmail.com</a></dd></div>
+            <div class="ui-fact"><dt>GitHub</dt><dd class="is-mono"><a href="https://github.com/George-Strauch">George-Strauch</a></dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="ui-box" aria-labelledby="summary-title">
+        <header class="ui-box-head"><h2 class="ui-box-title" id="summary-title">Summary</h2></header>
+        <div class="ui-box-body gs-prose">
+          <p>I'm a software engineer at Charter Communications, where I've worked on network automation since 2022. I design and build the internal systems that automate network equipment design and the configuration that follows an install. I own their architecture across the back-end services, the APIs and the interfaces people use.</p>
+          <p>I think in architecture, APIs, data flows and integration points. My requirements come straight from the field technicians and network engineers who use what I build.</p>
+          <p>Before Charter I studied applied mathematics and computer science at Texas State University. My undergraduate research there in machine learning and computer vision led to a paper published through IEEE.</p>
+        </div>
+      </section>
+
+      <section class="ui-box" aria-labelledby="approach-title">
+        <header class="ui-box-head"><h2 class="ui-box-title" id="approach-title">Approach</h2></header>
+        <div class="ui-box-body gs-prose">
+          <p>A large share of my code now starts as a draft from a language model. I use LLMs and coding agents to write and refactor code, find my way around unfamiliar codebases, research problems and write tests.</p>
+          <p>They're fast, and they can be wrong in ways that look right. So more of my job is now deciding what to build and giving the model the context and constraints it needs. Then I read what comes back carefully and own the result.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="ui-box" id="experience" aria-labelledby="experience-title">
+      <header class="ui-box-head">
+        <h2 class="ui-box-title" id="experience-title">Experience</h2>
+        <span class="ui-box-count">2</span>
+      </header>
+      <div class="ui-box-body gs-items">
+        <article class="ui-item">
+          <div class="ui-item-tag">
+            <span class="gs-when">2022-02 → present</span><span class="ui-item-dot">·</span>
+            <span>Charter Communications</span><span class="ui-item-dot">·</span>
+            <span>Austin, TX</span><span class="ui-item-dot">·</span>
+            <span class="gs-tagword">Current</span>
+          </div>
+          <h3 class="ui-item-title">Software Engineer, Network Automation</h3>
+          <div class="ui-item-body gs-role">
+            <dl class="ui-facts">
+              <div class="ui-fact"><dt>Focus</dt><dd>Network equipment design and post-install configuration</dd></div>
+              <div class="ui-fact"><dt>Scope</dt><dd>Back-end services, APIs and front ends</dd></div>
+              <div class="ui-fact"><dt>Users</dt><dd>Field technicians and network engineers</dd></div>
+              <div class="ui-fact"><dt>Stack</dt><dd class="is-mono">Python · Django · Flask · React · Angular</dd></div>
+            </dl>
+            <div class="gs-role-text">
+              <p>I design and build internal systems that automate network equipment design and the configuration that follows an install. I own the architecture decisions across back-end services, APIs and front-end interfaces. I gather requirements directly from the field technicians and network engineers who use the tools.</p>
+              <div class="gs-sub">
+                <div class="gs-sub-label">Ongoing<span class="ui-item-dot">·</span>Architect and lead</div>
+                <h4 class="gs-sub-title">Cisco Meraki configuration automation</h4>
+                <p>The system that automates Cisco Meraki device configuration at locations nationwide. It runs in production and is still in active development.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="ui-item">
+          <div class="ui-item-tag">
+            <span class="gs-when">2021-02 → 2021-12</span><span class="ui-item-dot">·</span>
+            <span>Texas State University</span><span class="ui-item-dot">·</span>
+            <span>San Marcos, TX</span>
+          </div>
+          <h3 class="ui-item-title">Undergraduate Researcher and Machine Learning Grader</h3>
+          <div class="ui-item-body gs-role">
+            <dl class="ui-facts">
+              <div class="ui-fact"><dt>Focus</dt><dd>Machine learning for computer vision</dd></div>
+              <div class="ui-fact"><dt>Course</dt><dd>ML 4347, grader</dd></div>
+              <div class="ui-fact"><dt>Stack</dt><dd class="is-mono">Python</dd></div>
+            </dl>
+            <div class="gs-role-text">
+              <p>I applied machine learning to computer vision problems. One was maritime activity detection: classifying small boats in video. The other was visual feature extraction for object search and retrieval. The maritime work was published through IEEE (see <a href="#research">Research</a>).</p>
+              <p>I graded coursework and gave feedback in the undergraduate machine learning course. I also managed the course's GitHub repositories and helped plan the curriculum.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="gs-grid">
+      <section class="ui-box" id="research" aria-labelledby="research-title">
+        <header class="ui-box-head">
+          <h2 class="ui-box-title" id="research-title">Research</h2>
+          <span class="ui-box-count">1</span>
         </header>
-
-        <!-- Skills Ribbon -->
-        <section class="skills-ribbon">
-            <div class="skills-container">
-                <span class="skill-pill">System Architecture</span>
-                <span class="skill-pill">API Design</span>
-                <span class="skill-pill">Multi-Agent AI</span>
-                <span class="skill-pill">LLM Integration</span>
-                <span class="skill-pill">Data Processing</span>
-                <span class="skill-pill">Network Automation</span>
+        <div class="ui-box-body gs-items">
+          <article class="ui-item">
+            <div class="ui-item-tag">
+              <span class="gs-when">2021</span><span class="ui-item-dot">·</span>
+              <span>IEEE</span><span class="ui-item-dot">·</span>
+              <span>Publication</span>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="section about-section">
-            <div class="section-container">
-                <h2 class="section-title">About Me</h2>
-                <p class="about-text">
-                    Software engineer with 5+ years of experience designing and building production network provisioning and automation tools
-                    at Charter Communications. I think in architecture, APIs, data flows, and integration points.
-                    Currently exploring multi-agent AI systems and large-scale data processing platforms. I let LLMs handle the grunt work and add the human touch where it's needed.
-                </p>
+            <h3 class="ui-item-title">Maritime activity detection</h3>
+            <div class="ui-item-body">
+              <p>Machine learning that detects, localizes and classifies small boat activity in video feeds for automated early warning. Presented at the UMBC Big Data REU symposium and published through IEEE.</p>
+              <div class="gs-link-line"><a href="https://ieeexplore.ieee.org/document/9671274">IEEE Xplore</a> <span class="is-mono ui-item-dot">document 9671274</span></div>
             </div>
-        </section>
+          </article>
+        </div>
+      </section>
 
-
-        <!-- Experience Section -->
-        <section class="section experience-section">
-            <div class="section-container">
-                <div class="experience-layout">
-                    <div class="experience-main">
-                        <h2 class="section-title">Experience</h2>
-
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="job-header">
-                                        <h3 class="job-title">Software Engineer, Network Automation</h3>
-                                        <span class="job-company">Charter Communications</span>
-                                        <span class="job-dates">February 2022 - Present</span>
-                                    </div>
-                                    <div class="job-description">
-                                        <p>
-                                            Design and build internal systems automating network equipment design
-                                            and post-install configuration. Own architecture decisions across backend
-                                            services, APIs, and frontend interfaces. Gather requirements directly from
-                                            field technicians and network engineers.
-                                        </p>
-                                        <p>
-                                            Architect and lead automation system for Cisco Meraki device configuration:
-                                            15,000+ devices across 7,000+ locations nationwide. Each automation saves
-                                            ~$100 and 2 hours labor per install.
-                                        </p>
-                                        <div class="job-tech">
-                                            <span class="tech-tag">Python</span>
-                                            <span class="tech-tag">Django</span>
-                                            <span class="tech-tag">ReactJS</span>
-                                            <span class="tech-tag">Angular</span>
-                                            <span class="tech-tag">Flask</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="job-header">
-                                        <h3 class="job-title">Undergraduate Research & ML Grader</h3>
-                                        <span class="job-company">Texas State University</span>
-                                        <span class="job-dates">February 2021 - December 2021</span>
-                                    </div>
-                                    <div class="job-description">
-                                        <p>
-                                            Applied ML to computer vision problems: maritime activity detection (small boat
-                                            classification from video) and visual feature extraction for object search/retrieval.
-                                            Published findings in
-                                            <a href="https://ieeexplore.ieee.org/document/9671274" target="_blank" class="text-link">IEEE</a>.
-                                        </p>
-                                        <p>
-                                            Graded coursework and provided feedback for ~65 students in ML 4347. Managed course
-                                            GitHub repositories and assisted with curriculum planning.
-                                        </p>
-                                        <div class="job-tech">
-                                            <span class="tech-tag">Machine Learning</span>
-                                            <span class="tech-tag">Computer Vision</span>
-                                            <span class="tech-tag">Python</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <aside class="metrics-sidebar">
-                        <h3 class="sidebar-title">Impact Metrics</h3>
-                        <div class="metric-card">
-                            <span class="metric-value">15,000+</span>
-                            <span class="metric-label">Devices Configured</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-value">7,000+</span>
-                            <span class="metric-label">Locations Nationwide</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-value">$100</span>
-                            <span class="metric-label">Saved Per Install</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-value">2 hrs</span>
-                            <span class="metric-label">Labor Saved Per Install</span>
-                        </div>
-                    </aside>
-                </div>
+      <section class="ui-box" id="education" aria-labelledby="education-title">
+        <header class="ui-box-head">
+          <h2 class="ui-box-title" id="education-title">Education</h2>
+          <span class="ui-box-count">2</span>
+        </header>
+        <div class="ui-box-body gs-items">
+          <article class="ui-item">
+            <div class="ui-item-tag">
+              <span class="gs-when">2018-08 → 2021-12</span><span class="ui-item-dot">·</span>
+              <span>Texas State University</span><span class="ui-item-dot">·</span>
+              <span>San Marcos, TX</span>
             </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="section projects-section">
-            <div class="section-container">
-                <h2 class="section-title">Projects</h2>
-
-                <div class="projects-grid">
-                    <div class="project-card featured">
-                        <div class="featured-badge">
-                            <i class="fas fa-robot"></i> Latest
-                        </div>
-                        <div class="project-header">
-                            <h3 class="project-title">Chorus - Multi-Agent AI Platform</h3>
-                            <span class="project-date">2024 - Present</span>
-                        </div>
-                        <p class="project-description">
-                            Multi-agent AI system that transforms Discord channels into autonomous agents with dedicated workspaces, git repos, and configurable tool access. Each agent can edit files, run commands, and manage their own context.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">FastAPI</span>
-                            <span class="project-tag">LLMs</span>
-                            <span class="project-tag">Discord.py</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card featured">
-                        <div class="featured-badge">
-                            <i class="fas fa-globe"></i> Live
-                        </div>
-                        <div class="project-header">
-                            <h3 class="project-title">News Aggregation Platform</h3>
-                            <span class="project-date">2025 - Present</span>
-                        </div>
-                        <p class="project-description">
-                            Large-scale news aggregation platform at newslib.io processing 45M+ articles from thousands of sources. Features real-time ingestion, semantic deduplication, and RESTful API.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">FastAPI</span>
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">PostgreSQL</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">Network Design Automation</h3>
-                            <span class="project-date">2022 - Present</span>
-                        </div>
-                        <p class="project-description">
-                            End-to-end system automating large-scale Cisco Meraki network configuration
-                            at Charter. 15,000+ devices across 7,000+ locations nationwide.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Django</span>
-                            <span class="project-tag">ReactJS</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">NewsML - AI/ML Processing</h3>
-                            <span class="project-date">2024 - Present</span>
-                        </div>
-                        <p class="project-description">
-                            AI/ML components for news article processing: deduplication, classification, clustering, and hierarchical event detection using semantic embeddings.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">scikit-learn</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card featured">
-                        <div class="featured-badge">
-                            <i class="fas fa-award"></i> IEEE Published
-                        </div>
-                        <div class="project-header">
-                            <h3 class="project-title">Maritime Activity Detection</h3>
-                            <span class="project-date">2021</span>
-                        </div>
-                        <p class="project-description">
-                            Detects, localizes, and classifies small boat activity from video feeds
-                            for automated early warning. Published at UMBC BigData REU Symposium and IEEE.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Computer Vision</span>
-                            <span class="project-tag">Python</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">ReactJS Website Template</h3>
-                            <span class="project-date">2024</span>
-                        </div>
-                        <p class="project-description">
-                            Rebrandable website template designed for fast deployment of portfolios
-                            and small business sites.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">ReactJS</span>
-                            <span class="project-tag">JavaScript</span>
-                        </div>
-                    </div>
-
-                </div>
+            <h3 class="ui-item-title">B.S. Applied Mathematics and Computer Science</h3>
+            <div class="ui-item-body">
+              <dl class="ui-facts gs-facts-flush">
+                <div class="ui-fact"><dt>Honors</dt><dd>Dean's List, Fall 2018 and Spring 2019<br>Academic Distinction, Fall 2020</dd></div>
+              </dl>
             </div>
-        </section>
-
-        <!-- Education Section -->
-        <section class="section education-section">
-            <div class="section-container">
-                <h2 class="section-title">Education</h2>
-
-                <div class="education-grid">
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="education-content">
-                            <h3 class="education-school">Texas State University</h3>
-                            <p class="education-location">San Marcos, TX</p>
-                            <p class="education-dates">August 2018 - December 2021</p>
-                            <p class="education-degree">Bachelor of Science: Applied Mathematics and Computer Science</p>
-                            <div class="education-honors">
-                                <span class="honor-badge">Dean's List - Fall 2018 & Spring 2019</span>
-                                <span class="honor-badge">Academic Distinction - Fall 2020</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="education-connector"></div>
-
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="education-content">
-                            <h3 class="education-school">Northwest Vista College</h3>
-                            <p class="education-location">San Antonio, TX</p>
-                            <p class="education-dates">August 2016 - May 2018</p>
-                            <p class="education-degree">Associates: Computer Science</p>
-                        </div>
-                    </div>
-                </div>
+          </article>
+          <article class="ui-item">
+            <div class="ui-item-tag">
+              <span class="gs-when">2016-08 → 2018-05</span><span class="ui-item-dot">·</span>
+              <span>Northwest Vista College</span><span class="ui-item-dot">·</span>
+              <span>San Antonio, TX</span>
             </div>
-        </section>
+            <h3 class="ui-item-title">Associate's, Computer Science</h3>
+          </article>
+        </div>
+      </section>
 
-    </body>
+      <section class="ui-box" id="stack" aria-labelledby="stack-title">
+        <header class="ui-box-head"><h2 class="ui-box-title" id="stack-title">Stack</h2></header>
+        <div class="ui-box-body">
+          <dl class="ui-facts gs-facts-wide">
+            <div class="ui-fact"><dt>Languages</dt><dd>Python, JavaScript, TypeScript, SQL, Bash</dd></div>
+            <div class="ui-fact"><dt>Back end</dt><dd>Django, Flask, FastAPI</dd></div>
+            <div class="ui-fact"><dt>Front end</dt><dd>React, Angular</dd></div>
+            <div class="ui-fact"><dt>Data</dt><dd>PostgreSQL, SQLite</dd></div>
+            <div class="ui-fact"><dt>Infrastructure</dt><dd>Docker, NGINX, Linux, AWS, DigitalOcean</dd></div>
+            <div class="ui-fact"><dt>Areas</dt><dd class="is-quiet">Network automation, system architecture, API design, machine learning, computer vision</dd></div>
+          </dl>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="gs-foot">
+    <span class="gs-release"><a id="build" href="https://github.com/George-Strauch/George-Strauch.github.io"><span class="is-wide">george-strauch.github.io · </span>main</a></span>
+    <span class="gs-clock" id="clock">0000-00-00 00:00:00 UTC</span>
+  </footer>
+</div>
+</body>
 </html>
